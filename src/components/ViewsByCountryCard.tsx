@@ -2,10 +2,10 @@ import { PieChart, Pie, ResponsiveContainer, Cell } from 'recharts';
 import { ChevronDown } from 'lucide-react';
 
 const data = [
-  { name: 'USA', value: 39.11, change: 2.98, color: 'hsl(var(--chart-primary))' },
-  { name: 'Canada', value: 28.02, change: -3.25, color: 'hsl(var(--chart-2))' },
-  { name: 'U.K.', value: 23.13, change: 0.14, color: 'hsl(var(--chart-3))' },
-  { name: 'Australia', value: 5.03, change: -1.11, color: 'hsl(var(--chart-4))' },
+  { name: 'UAE', value: 39.11, change: 2.98, color: 'hsl(var(--chart-primary))' },
+  { name: 'INDIA', value: 28.02, change: -3.25, color: 'hsl(var(--chart-2))' },
+  { name: 'U.K', value: 23.13, change: 0.14, color: 'hsl(var(--chart-3))' },
+  { name: 'USA', value: 5.03, change: -1.11, color: 'hsl(var(--chart-4))' },
 ];
 
 const ViewsByCountryCard = () => {
@@ -22,7 +22,7 @@ const ViewsByCountryCard = () => {
           </h2>
         </div>
         <div className="flex items-center gap-1 bg-muted rounded-md px-2 py-1 text-[10px] font-medium text-foreground cursor-pointer hover:bg-muted/80">
-          <span>2021</span>
+          <span>2025</span>
           <ChevronDown className="w-3 h-3" />
         </div>
       </div>

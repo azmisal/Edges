@@ -17,11 +17,9 @@ const TransformSection = () => {
             operations, seamless workflows, or future-ready digital applications we are your go-to partner.
           </p>
           
-          <Button size="lg" className="bg-primary hover:bg-primary/90 text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-4 sm:py-6">
+          {/* <Button size="lg" className="bg-primary hover:bg-primary/90 text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-4 sm:py-6">
             Contact Us <ArrowUpRight className="w-6 h-6 sm:w-7 sm:h-7" />
-
-
-          </Button>
+          </Button> */}
         </div>
       </div>
     </section>

@@ -7,64 +7,57 @@ import { useEffect, useState } from "react";
 
 const Footer = () => {
   const { theme, setTheme } = useTheme();
-    const [isDark, setIsDark] = useState(false);
-  
+  const [isDark, setIsDark] = useState(false);
+
   useEffect(() => {
     setIsDark(
       theme === "dark" || (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches)
     );
   }, [theme]);
-  const navigationLinks = {
-    column1: [
-      { name: 'Home', href: '/' },
-      { name: 'Products', href: '/page-not-foud' }
-    ],
-    column2: [
-      { name: 'Service', href: '/page-not-foud' },
-      { name: 'Careers', href: '/page-not-foud' },
-    ],
-    column3: [
-      { name: 'About Us', href: '/page-not-foud' },
-      { name: 'Contact Us', href: '/page-not-foud' },
-    ],
-  };
+  const navigationLinks = [
+    { name: 'Home', href: '/' },
+    { name: 'About Us', href: '/about' },
+    { name: 'Service', href: '/NotFound' },
+    { name: 'Careers', href: '/NotFound' },
+    { name: 'Clients', href: '/NotFound' },
+    { name: 'Contact', href: '/contact' },
+  ];
 
   const socialLinks = [
     { icon: FaFacebook, href: '#', label: 'Facebook' },
-    { icon: FaXTwitter, href: '#', label: 'Twitter' },
+    { icon: FaXTwitter, href: 'https://x.com/edgesplus', label: 'Twitter' },
     { icon: FaInstagram, href: 'https://www.instagram.com/edgesplus/#', label: 'Instagram' },
-    { icon: FaLinkedin, href: 'https://www.linkedin.com/company/edgesplus/', label: 'LinkedIn' },
+
+    { icon: FaLinkedin, href: 'https://www.linkedin.com/company/edgesplus/', label: 'LinkedIn' },
+
   ];
 
   return (
     <footer className="bg-footer border-t border-border">
       <div className="max-w-7xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-8 items-center">
+        <div className="flex justify-between gap-8 mb-8 items-center">
           {/* Brand Section */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <img src={isDark ? LogoDark : Logo} alt="Edges+ Logo" />
             </div>
-            <p className="text-footer-muted max-w-md leading-relaxed ml-2">
+            <p className="text-footer-muted max-w-md leading-relaxed ml-2 text-xs lg:text-base ">
               Empower your enterprise with Edges+'s smart Solution, designed to simplify
               complex business processes with precision and ease.
             </p>
           </div>
+          <div className="grid w-full lg:w-auto grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-x-32">
+            {navigationLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="block text-xs lg:text-base text-footer-muted hover:text-footer-foreground transition-colors duration-200"
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
 
-          {/* Navigation Links */}
-          {Object.values(navigationLinks).map((column, idx) => (
-            <div key={idx} className="space-y-3">
-              {column.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="block text-footer-muted hover:text-footer-foreground transition-colors duration-200"
-                >
-                  {link.name}
-                </a>
-              ))}
-            </div>
-          ))}
         </div>
 
         {/* Bottom Section */}
@@ -88,7 +81,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
+    </footer >
   );
 };
 

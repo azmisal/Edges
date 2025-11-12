@@ -35,9 +35,11 @@ const HeroSection = () => {
           </p>
 
           {/* Contact Button */}
-          {/* Contact Button */}
           <div className="flex justify-center lg:justify-start">
-            <Button className="bg-primary text-base text-white flex items-center gap-2 px-6 py-6 rounded-md transition-colors">
+            <Button 
+              onClick={() => window.location.href = '/contact'}
+              className="bg-primary text-base text-white flex items-center gap-2 px-6 py-6 rounded-md transition-colors hover:bg-primary/90"
+            >
               Contact <ArrowUpRight className="w-5 h-5" />
             </Button>
           </div>
@@ -47,12 +49,10 @@ const HeroSection = () => {
 
       {/* Right half */}
       <div
-        className="hidden sm:block w-full lg:w-1/2 h-full lg:h-full rounded-2xl flex flex-col items-center justify-center p-4 gap-4 overflow-hidden bg-[radial-gradient(circle,rgba(246,247,248,0.4)_0%,rgba(235,245,255,1)_100%)] dark:bg-[radial-gradient(circle,rgba(12,26,39,0.4)_0%,rgba(12,26,39,08)_100%)]"
-
+        className="hidden sm:block w-full lg:w-1/2 h-full lg:h-full rounded-2xl flex-col items-center justify-center p-4 gap-4 overflow-hidden bg-[radial-gradient(circle,rgba(246,247,248,0.4)_0%,rgba(235,245,255,1)_100%)] dark:bg-[radial-gradient(circle,rgba(12,26,39,0.4)_0%,rgba(12,26,39,08)_100%)]"
       >
         {/* Cards container */}
-        {/* Cards container */}
-        <div className="grid grid-cols-2 gap-6 flex items-center justify-center ">
+        <div className="grid grid-cols-2 gap-6 flex items-center justify-center">
           {[PurchaseManagement, ViewsByCountryCard, StatisticsCard, MonthlyActivityCard].map(
             (Component, i) => (
               <div

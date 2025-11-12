@@ -39,11 +39,11 @@ const Header = () => {
 
   const navLinks = [
     { title: "Home", href: "/" },
-    { title: "Products", href: "/page-not-found" },
+    { title: "About Us", href: "/about" },
     { title: "Services", href: "/page-not-found" },
     { title: "Careers", href: "/page-not-found" },
     { title: "Clients", href: "/page-not-found" },
-    { title: "Contact Us", href: "/page-not-found" },
+    { title: "Contact Us", href: "/contact" },
   ];
 
   return (
@@ -53,7 +53,9 @@ const Header = () => {
     >
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
-        <img src={isDark ? LogoDark : Logo} alt="Edges+ Logo" />
+        <a href="/" className="cursor-pointer">
+          <img src={isDark ? LogoDark : Logo} alt="Edges+ Logo" />
+        </a>
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
@@ -63,18 +65,19 @@ const Header = () => {
             </a>
           ))}
 
-          {/* Theme toggle for desktop */}
-          <button
-            onClick={toggleTheme}
-            className="h-auto w-auto flex items-center justify-center p-2 rounded-full transition-all duration-300"
-          >
-            {isDark ? (
-              <img src={SunIcon} alt="Sun" className="w-7 h-7 transition-transform duration-300 rotate-180" />
-            ) : (
-              <img src={MoonIcon} alt="Moon" className="w-6 h-6 transition-transform duration-200 rotate-0" />
-            )}
-          </button>
+
         </nav>
+        {/* Theme toggle for desktop */}
+        <button
+          onClick={toggleTheme}
+          className="hidden lg:inline-flex h-auto w-auto items-center justify-center p-2 rounded-full transition-all duration-300"
+        >
+          {isDark ? (
+            <img src={SunIcon} alt="Sun" className="w-7 h-7 transition-transform duration-300 rotate-180" />
+          ) : (
+            <img src={MoonIcon} alt="Moon" className="w-6 h-6 transition-transform duration-200 rotate-0" />
+          )}
+        </button>
 
         {/* Mobile controls */}
         <div className="flex items-center space-x-2 lg:hidden">

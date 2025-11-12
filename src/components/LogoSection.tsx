@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import logoLight from "../../assets/Logo.png";
 import logoDark from "../../assets/LogoDark.png";
+import Alsbeel from "../../assets/Alsbeel.png";
+import Windson from "../../assets/Windson.png";
 import { useTheme } from "next-themes";
 
 const LogoSection = () => {
@@ -31,7 +33,7 @@ const LogoSection = () => {
   }, []);
 
   // Change number of logos based on screen size
-  const logoCount = isMobile ? 2 : 4;
+  const logoCount = isMobile ? 1 : 4;
   const logos = Array(logoCount).fill(isDark ? logoDark : logoLight);
 
   return (

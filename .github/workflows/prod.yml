@@ -1,0 +1,33 @@
+name: Dev CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - prod
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+
+      - name: Install dependencies and build
+        run: |
+          npm install
+          npm run build
+          
+
+      - name: Copy build folder to EC2 via SCP
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.EC2_DEV_HOST }}
+          username: ${{ secrets.EC2_DEV_USER }}
+          key: ${{ secrets.EC2_DEV_KEY }}
+          port: ${{ secrets.EC2_DEV_PORT }}
+          source: "dist/*"
+          target: "/var/www/html/edgesplus"
+
+      

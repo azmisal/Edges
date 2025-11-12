@@ -1,4 +1,6 @@
 import { Button } from "@/components/ui/button";
+import Lottie from "lottie-react";
+import myAnimation from "../../assets/lets.json";
 
 const BuildEdgeSection = () => {
   return (
@@ -23,13 +25,15 @@ const BuildEdgeSection = () => {
             </Button>
           </div>
           
-          {/* Right Image / Circle Section */}
-          <div className="relative flex justify-center lg:justify-end mt-8 lg:mt-0 ">
-            <div className="w-full h-64 sm:h-80 lg:h-96 bg-muted rounded-2xl flex items-center justify-center">
-              <div className="text-center text-muted-foreground">
-                <div className="w-16 h-16 sm:w-24 sm:h-24 bg-muted-foreground/20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <div className="w-8 h-8 sm:w-12 sm:h-12 bg-primary/20 rounded-full"></div>
-                </div>
+          {/* Right Animation Section */}
+          <div className="relative flex justify-center lg:justify-end mt-8 lg:mt-0">
+            <div className="w-full h-64 sm:h-80 lg:h-96 flex items-center justify-center">
+              <div className="w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[500px] lg:h-[500px]">
+                <Lottie 
+                  animationData={myAnimation} 
+                  loop={true}
+                  style={{ transform: 'scaleX(-1)' }}  // This will flip the animation horizontally
+                />
               </div>
             </div>
           </div>

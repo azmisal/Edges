@@ -7,7 +7,9 @@ import { ThemeProvider } from "@/contexts/ThemeContext";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Header from "./components/Header";
-import PurchaseManagement from "./components/PurchaseGraph";
+import ContactPage from "./pages/Contact";
+import AboutPage from "./pages/About";
+import Footer from "./components/Footer";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -18,12 +20,15 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <Header />
-
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/about" element={<AboutPage />} />
+
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="/page-not-foud" element={<NotFound />} />
+            <Route path="/page-not-found" element={<NotFound />} />
           </Routes>
+          <Footer/>
         </BrowserRouter>
       </TooltipProvider>
     </ThemeProvider>
