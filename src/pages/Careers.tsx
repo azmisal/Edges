@@ -7,9 +7,9 @@ const CareersPage = () => {
     const techStack = [
         { name: "React", icon: Code },
         { name: "Node.js", icon: Layers },
-        { name: "TypeScript", icon: Code },
+        { name: "JavaScript", icon: Code },
         { name: "PostgreSQL", icon: Database },
-        { name: "MongoDB", icon: Database },
+        { name: "MUI", icon: Layers },
         { name: "REST APIs", icon: Globe },
     ];
 
@@ -25,8 +25,8 @@ const CareersPage = () => {
     ];
 
     const requirements = [
-        "3+ years of professional full-stack development experience",
-        "Strong proficiency in JavaScript/TypeScript and modern frameworks (React, Vue, or Angular)",
+        "Minimum 1 year of professional full-stack development experience",
+        "Strong proficiency in JavaScript and modern frameworks (React, Vue, or Angular)",
         "Experience with Node.js and backend development",
         "Solid understanding of RESTful APIs and microservices architecture",
         "Proficiency with SQL and NoSQL databases",
@@ -44,16 +44,6 @@ const CareersPage = () => {
         "Open source contributions",
     ];
 
-    const benefits = [
-        "Competitive salary and equity package",
-        "Flexible working hours and remote work options",
-        "Health insurance and wellness benefits",
-        "Professional development opportunities",
-        "Modern tech stack and tools",
-        "Collaborative and inclusive work environment",
-        "Team building activities and company events",
-        "Opportunity to work on challenging projects",
-    ];
 
     return (
         <div className="min-h-screen p-4 pt-48 lg:pt-24">
@@ -156,19 +146,6 @@ const CareersPage = () => {
                                 </ul>
                             </div>
 
-                            {/* Benefits */}
-                            <div>
-                                <h3 className="text-xl font-semibold mb-4">What We Offer</h3>
-                                <ul className="grid md:grid-cols-2 gap-3">
-                                    {benefits.map((item, index) => (
-                                        <li key={index} className="flex items-start gap-2">
-                                            <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                                            <span className="text-muted-foreground">{item}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-
                             {/* Application Section */}
                             <div id="apply" className="pt-6 border-t">
                                 <h3 className="text-2xl font-semibold mb-4">Ready to Apply?</h3>
@@ -178,13 +155,13 @@ const CareersPage = () => {
                                 </p>
                                 <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
                                     <a
-                                        href="mailto:careers@edges.com"
+                                        href="mailto:hr@edhesplus.com"
                                         className="px-6 py-3 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors font-semibold"
                                     >
                                         Email Your Application
                                     </a>
                                     <span className="text-muted-foreground">
-                                        or send to: <span className="font-semibold text-foreground">careers@edges.com</span>
+                                        or send to: <span className="font-semibold text-foreground">hr@edhesplus.com</span>
                                     </span>
                                 </div>
                             </div>
