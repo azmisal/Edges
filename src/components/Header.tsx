@@ -40,9 +40,9 @@ const Header = () => {
   const navLinks = [
     { title: "Home", href: "/" },
     { title: "About Us", href: "/about" },
-    { title: "Services", href: "/page-not-found" },
-    { title: "Careers", href: "/page-not-found" },
-    { title: "Clients", href: "/page-not-found" },
+    { title: "Services", href: "/services" },
+    { title: "Careers", href: "/careers" },
+    { title: "Clients", href: "/clients" },
     { title: "Contact Us", href: "/contact" },
   ];
 
